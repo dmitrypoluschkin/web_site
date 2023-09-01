@@ -1,9 +1,15 @@
 from django.contrib.auth.models import User
+from models import Profile
+
+"""Создать профиль пользователя для социальной аутентификации"""
+
+
+def create_profile(backend, user, *args, **kwargs):
+    Profile.objects.get_or_create(user=user)
 
 
 class EmailAuthBackend:
     """Аутентифицировать посредством адреса электронной почты."""
-
 
     def authenticate(self, request, username=None, password=None):
         try:
@@ -18,4 +24,4 @@ class EmailAuthBackend:
         try:
             return User.objects.get(pk=user_id)
         except User.DoesNotExist:
-                return None
+            return None
