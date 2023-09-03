@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from models import Profile
+from account.models import Profile
 
 """Создать профиль пользователя для социальной аутентификации"""
 

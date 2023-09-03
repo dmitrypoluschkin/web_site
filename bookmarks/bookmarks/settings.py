@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django_extensions',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTHENTICATION_BACKENDS = [
- 'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
     'social_core.backends.google.GoogleOAuth2',
 ]
@@ -157,3 +158,9 @@ SOCIAL_AUTH_PIPELINE = [
  'social_core.pipeline.social_auth.load_extra_data',
  'social_core.pipeline.user.user_details',
 ]
+
+'''AUTHENTICATION_BACKENDS = [
+ 'django.contrib.auth.backends.ModelBackend',
+ 'account.authentication.EmailAuthBackend',
+ 'social_core.backends.google.GoogleOAuth2',
+]'''
